@@ -1,0 +1,142 @@
+Comandos GIT
+Iniciar el terminal Git Bash ubicado en la carpeta Git
+
+git init //Inicializa el proyecto git
+git add . //Agrega todos al escenario
+git add README.txt //Agrega un archivo especifico al escenario
+git add css/ //Agrega toda la carpeta css al escenario
+git add -u //Actualiza las modificaciones realizadas en los archivos del proyecto, al stage
+ls //Lista todos los archivos dentro de la carpeta actual (No incluye ocultos)
+ls -al //Lista todos los archivos dentro de la carpeta actual  (incluye ocultos)
+git status //Indica el estado de los archivos (nuevos, modificados, no agregados al escenario)
+git status -s //Indica el estado de los archivos resumido (M verde: stage, M rojo: No stage)
+git commit -m "Mensaje commit"//Toma una foto de los archivos contenidos. Con este comando se asegura poder regresar en elgún momento. Crea una versión del archivo
+git commit -am "Mensaje commit" //Agrega al stage y realiza commit al mismo tiempo
+git checkout -- . //Reversa los cambios realizados hasta el ultimo commit //Cambia de rama
+git checkout -b [NombreRama] //Crea una nueva rama y se mueve a dicha rama automaticamente
+rm -rf .git //elimina el repositorio .git (quita el control de versiones)
+clear //Limpia la consola
+git show //Muestra el último commit y los cambios que hubieron
+git log //Lista todos los commits que se hicieron //presionar "q" para salir
+git log --oneline //Lista todos los commits que se hicieorn pero en una sola linea
+git log --oneline --decorate --all --graph //Lista todos los commits de las distintas ramas
+pwd //Muestra la ruta en la que se esta trabajando
+:q //Salir de la subventana 
+git reset [Nombre del archivo] o [*.xml] (*.extension) //Se elimina o retira un archivo del stage o escenario
+git diff //Muestra las diferencias de los archivos en relación al último commit
+git diff --staged //Muestra las diferencias de los archivos entre el último commit y el archivo ubicado en el stage
+git diff [Rama1] [Rama2] //Muestra las diferencias entre las dos ramas 
+git commit --amend -m 'ACTUALIZAR COMENTARIOS' //Actualizar comentarios de commits realizados con anterioridad
+git reset --soft [ID Historico] //Revierte los cambios al IdHistorico colocado, pero los cambios posteriores al IdHistorico se mantienen (Se mantiene staging)
+git reset --hard [ID Historico] //Revierte los cambios al IdHistorico colocado, pero los cambios posteriores al IdHistorico no se mantienen (No se mantiene staging)
+git reflog //Muestra todo el historial de los movimientos a pesar de haber realizado git reset hard
+git mv [NombreAntiguo] [NombreNuevo] //Mueve o renombra el nombre de un archivo
+git rm [NombreArchivo] //Elimina archivo especificado
+git rm --cached [NombreArchivo] //Elimina archivo especificado del staging
+git branch //Lista todas las ramas existentes
+git branch -a //Lista todas las ramas, incluyendo las remotas
+git branch [Nombre-Rama] //Crea una nueva rama
+git merge [Nombre-Rama-a-Fusionar] //Fusiona los cambios de la rama master con la rama a fusionar.Es necesario estar ubicado en la rama master.
+git branch -d [Nombre-Rama-a-Eliminar] //Elimina una rama 
+git tag [NombreTag] //Crea una etiqueta para el proyecto. Ejem. etiqueta de Versiones
+git tag -d [NombreTag] //Elimina un tag
+git stash //Almacena los cambios que se encuentran en progreso en una memoria temporal y regresa al último commit
+git stash pop //Retorna todos los cambios del stash a la rama en la que estamos trabajando
+git stash drop //Elimina el último stash
+git config --global alias.[NombreAlias] "[Comando]" // Crea alias. Ejm:
+	git config --global alias.lg "log --oneline --decorate --all --graph"
+	alias arbolito="git log --all --graph --decorate --oneline"
+git config --list //muestra toda la configuración de git
+git config --global user.name "[NombreUsuario]" //Cambia el nombre de usuario
+git config --global user.email "[Email]" //Cambia el email del usuario
+git rebase [NombreRama] //Mueve el punto de donde iniciaste la rama
+
+/*****************Crear archivo .gitignore en Windows**********************/
+Ignorar archivos: Crear archivo .gitignore y colocar los archivos o carpetas a ignorar: Ejm
+	*.log
+	node-modules/
+Para solucionar esto utilicé los siguientes pasos.
+
+Crea el archivo de texto gitignore.txt.
+Ábralo en un editor de texto y agregue sus reglas, luego guarde y cierre
+Mantenga presionada la tecla MAYÚS, haga clic con el botón derecho en la carpeta en la que se encuentra y, a continuación, seleccione Abrir ventana de comandos aquí
+Luego renombra el archivo en la línea de comando, con ren gitignore.txt .gitignore
+********************************************************************************
+
+/*****************************GITHUB***************************/
+Para subir tu proyecto a github, primero lo debes crear en github y luego aplicar los siguientes comandos:
+git remote add [NombreOrigen] [RutaGitHub] // Crea un nuevo proyecto en github. Ejm:
+	git remote add origin https://github.com/noerromero/udemy-heroes.git
+git push -origin master //Acá saldrá un error, entonces se debe aplicar
+git pull origin master --allow-unrelated-histories // fin, ya está enlazado
+
+git remote //Lista todos los proyectos remotos
+git push //Sube todos los cambios locales al repositorio github
+git push tags //Sube todos los tags a gitHub, ya que cuando se crea el proyecto, estos no se crean por defecto. Se deben realizar de forma manual
+git remote -v //Verificar a que proyecto github está enlazado
+git pull //Obtiene los últimos cambios de la rama en la que estamos ubicados
+git clone [RutaClonarGitHub] //Clona la rama en tu repositorio local
+git clone [RutaClonarGitHub] [EspecificarNombre] //Clona la rama en tu repositorio local con el nombre que le especifiques
+git clone -b [NombreRamaRemoto] [RutaClonarGitHub] [EspecificarNombre] //Clona una rama especifica de git hub
+git fetch //Obtiene todos los cambios que se hicieron el github, pero no los actualiza. Te sirve para comparar usando un git status
+Fork: Clona una rama de un repositorio publico en tu cuenta de github
+git remote add upstream [RutaClonarGitHubRepositorioDelQueSeRealizoElFork] //Actualiza los cambios del origen a tu fork
+git commit -am "Agregamos la solucion a un isue [fixes #5]" // La sentencia [fixes #5] relaciona el commit con un isue especifico, en este caso #5
+git remote set-url origin [NuevaURL] //Edita la url del repositorio remoto.
+
+
+/***********************MarkDown******************************/
+Titulos
+# h1
+## h2
+### h3
+#### h4
+##### h5
+
+Negrita / Cursiva
+Un **gran poder** requiere _una_ gran *responsabilidad*
+> Ben Parker
+
+Listas
+1. item
+2. item
+3. item
+  * subitem
+  * subitem
+  
+Imagen
+ ![C#](https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png)
+ 
+Link
+ [Ir a la imagen](https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png)
+
+/*******************************Nomenclatura Versiones******************************/
+v1.0.0
+CambioMayor.CambioMenor.Parche o Fix
+
+/***********************COMANDOS LINUX*********************************************/
+pwd //muestra la carpeta donde estás ubicado
+cd //Sirve para moverse de directorio
+~ //Indica que estas en alguna carpeta
+/ //Indica que esás en el home
+cd / //Moverte al home
+ls //Muestra todos los archivos de la carpeta
+ls -al //Muestra todos los archivos incluidos los ocultos
+clear //limpia consola
+cd .. //Retrocede de la carpeta (el espacio es importante en linux)
+mkdir proyecto1 //Crea la carpeta proyecto1
+touch vacio.txt //Crea el archivo vacio.txt
+cat vacio.txt //Ver el contenido del archivo vactio.txt
+history //muestra toda la historia de comandos escritos
+rm vacio.txt //borra el archivo vacio.txt
+rm --help //el comando -help muestra todos los parametros que puede tener rm
+
+/*************************EDITOR DE TEXTO VIM (LINUX)***********************/
+Esc + i //Inserta texto
+Esc + shift + z + z //Grabar y salir
+
+/**************************COMANDOS VISUAL STUDIO CODE***************************/
+code //abre vs code
+
+
+
