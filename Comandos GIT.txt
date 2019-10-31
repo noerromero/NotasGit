@@ -67,7 +67,7 @@ Luego renombra el archivo en la línea de comando, con ren gitignore.txt .gitigno
 Para subir tu proyecto a github, primero lo debes crear en github y luego aplicar los siguientes comandos:
 git remote add [NombreOrigen] [RutaGitHub] // Crea un nuevo proyecto en github. Ejm:
 	git remote add origin https://github.com/noerromero/udemy-heroes.git
-git push -origin master //Acá saldrá un error, entonces se debe aplicar
+git push origin master //Acá saldrá un error, entonces se debe aplicar
 git pull origin master --allow-unrelated-histories // fin, ya está enlazado
 
 git remote //Lista todos los proyectos remotos
