@@ -50,6 +50,7 @@ git config --list //muestra toda la configuración de git
 git config --global user.name "[NombreUsuario]" //Cambia el nombre de usuario
 git config --global user.email "[Email]" //Cambia el email del usuario
 git rebase [NombreRama] //Mueve el punto de donde iniciaste la rama
+gitK //Abre una ayuda visual para las ramas
 
 /*****************Crear archivo .gitignore en Windows**********************/
 Ignorar archivos: Crear archivo .gitignore y colocar los archivos o carpetas a ignorar: Ejm
@@ -71,10 +72,12 @@ git push origin master //Acá saldrá un error, entonces se debe aplicar
 git pull origin master --allow-unrelated-histories // fin, ya está enlazado
 
 git remote //Lista todos los proyectos remotos
-git push //Sube todos los cambios locales al repositorio github
+git push origin master//Sube todos los cambios locales al repositorio github
 git push tags //Sube todos los tags a gitHub, ya que cuando se crea el proyecto, estos no se crean por defecto. Se deben realizar de forma manual
+git push [NombreOrigenRemoto] [NombreRamaLocal] //Sube una rama local a github
+	Ejm: git push origin cabecera
 git remote -v //Verificar a que proyecto github está enlazado
-git pull //Obtiene los últimos cambios de la rama en la que estamos ubicados
+git pull origin master//Obtiene los últimos cambios de la rama en la que estamos ubicados
 git clone [RutaClonarGitHub] //Clona la rama en tu repositorio local
 git clone [RutaClonarGitHub] [EspecificarNombre] //Clona la rama en tu repositorio local con el nombre que le especifiques
 git clone -b [NombreRamaRemoto] [RutaClonarGitHub] [EspecificarNombre] //Clona una rama especifica de git hub
