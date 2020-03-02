@@ -1,0 +1,4 @@
+Notas postgres
+
+ALTER TABLE "Security"."Aplication" 
+ADD CONSTRAINT FK_Organization_Id FOREIGN KEY ("OrganizationId") REFERENCES "Security"."Organization" ("Id");
