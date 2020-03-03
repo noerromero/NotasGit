@@ -1,0 +1,15 @@
+EFCore Postgres
+Agregar paquetes:
+	- Microsoft.EntityFrameworkCore.Design (opcional)
+	- Microsoft.EntityFrameworkCore.Tools (opcional)
+	- Npgsql.EntityFrameworkCore.PostgreSQL
+	- Npgsql.EntityFrameworkCore.PostgreSQL.Design
+
+CodeFirst: En la consola de administrador de paquetes nuget (Tools-> Administrador de paquetes NuGet)
+	- Generar clases: Add-Migration [NombreMigracion]
+	- Migrar scripts: Update-Database
+
+DatabaseFirst : En la consola de administrador de paquetes nuget (Tools-> Administrador de paquetes NuGet)
+Scaffold-DbContext "Server=dev-bd.c4eg064xqfsk.sa-east-1.rds.amazonaws.com;Port=5432;Database=postgres;User ID=sa;Password=Agosto2019$;" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir EFModelsII 
+
+
