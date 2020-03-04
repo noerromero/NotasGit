@@ -1,12 +1,18 @@
 EFCore Postgres
 Agregar paquetes:
 	- Microsoft.EntityFrameworkCore.Design (opcional)
-	- Microsoft.EntityFrameworkCore.Tools (opcional)
+	- Microsoft.EntityFrameworkCore.Tools (Necesario para utilizar la consola para ejecutar instrucciones de EFCore)
 	- Npgsql.EntityFrameworkCore.PostgreSQL
 	- Npgsql.EntityFrameworkCore.PostgreSQL.Design
 
+Si se trabaja con sql server, se debe instalar el siguiente paquete nuget:
+	-Microsoft.EntityFrameworkCore.SqlServer
+
+Para visualizar 
+	-Microsoft.Extensions.Logging.Console
+
 CodeFirst: En la consola de administrador de paquetes nuget (Tools-> Administrador de paquetes NuGet)
-	- Generar clases: Add-Migration [NombreMigracion]
+	- Generar clases: Add-Migration [NombreMigracion] Ejm. Add-Migration Initial
 	- Migrar scripts: Update-Database
 
 DatabaseFirst : En la consola de administrador de paquetes nuget (Tools-> Administrador de paquetes NuGet)
