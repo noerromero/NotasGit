@@ -1,0 +1,40 @@
+--Requisitos:
+1.- Tener instalado NodeJs
+
+//Instalar Serverless (https://serverless.com)
+En la consola (cmd) aplicar el comando
+>npm install -g serverless
+
+//Buscar las credenciales en la consola de AWS (Opción Credenciales de seguridad) y configurarlas en serverless (local)
+aplicar el siguiente comando
+>serverless config credentials --provider aws --key AKIAIOSFODNN7EXAMPLE --secret wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+//Crear un directorio para trabajar nuestro proyecto
+
+//Con la linea de comandos (cmd) ubicarnos en dicha ubicación
+
+//Una vez dentro, Crear proyecto lambda con nodejs
+>sls create -t aws-nodejs -n curso-sls-hola-mundo
+
+//Desplegar lambda en aws (todas las funciones y configuraciones)
+>sls deploy
+
+//Ejecutar función lambda
+>sls invoke -f hello -s dev
+
+//Ejecutar función lambda en local
+>sls invoke local -f hello -s dev
+
+//Ejecutar función lambda y pasar parametros
+>sls invoke local -f hello -s dev -d 'Hola'
+
+//Ejecutar función lambda y pasar parametros
+>sls invoke local -f hello -s dev -d 'Hola'
+
+//Ejecutar función lambda y pasar parametros Json
+>sls invoke local -f hello -s dev -d '{"name":"noe"}'
+
+//Desplegar solo una función (ya existente)
+>sls deploy -f hello -s dev
+
+//Agregar eventos (configuración para api gateway) en archivo serverless.yml y volver a desplegar todo
