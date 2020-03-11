@@ -1,4 +1,4 @@
---Requisitos:
+﻿--Requisitos:
 1.- Tener instalado NodeJs
 
 //Instalar Serverless (https://serverless.com)
@@ -38,3 +38,12 @@ aplicar el siguiente comando
 >sls deploy -f hello -s dev
 
 //Agregar eventos (configuración para api gateway) en archivo serverless.yml y volver a desplegar todo
+
+//Ejecutar lambda (api rest) en modo offline -> 
+-Ingresar a la web github.com/serverless/plugins
+-El package que se debe instalar es: Offline - serverless-offline //Emula el apigateway en local
+-Para instalar regresar a la consola y ejecutar el siguiente comando:
+>npm install --save serverless-offline
+-Despues de instalar, ir al archivo serverless.yml y agregar el plugin en la sección plugins
+-Para inicializar el plugin ir a la consola y ejecutar el siguiente comando:
+>sls offline
