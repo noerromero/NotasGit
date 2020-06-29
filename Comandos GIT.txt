@@ -88,6 +88,12 @@ git commit -am "Agregamos la solucion a un isue [fixes #5]" // La sentencia [fix
 git remote set-url origin [NuevaURL] //Edita la url del repositorio remoto.
 
 
+Para subir un proyecto recien creado en Git que no cuenta con el archivo Readme
+git remote add origin https://github.com/noerromero/testScala-api.git
+git push -u origin master
+
+
+
 /***********************MarkDown******************************/
 Titulos
 # h1
