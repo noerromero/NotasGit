@@ -81,6 +81,7 @@ git pull origin master//Obtiene los últimos cambios de la rama en la que estamos
 git clone [RutaClonarGitHub] //Clona la rama en tu repositorio local
 git clone [RutaClonarGitHub] [EspecificarNombre] //Clona la rama en tu repositorio local con el nombre que le especifiques
 git clone -b [NombreRamaRemoto] [RutaClonarGitHub] [EspecificarNombre] //Clona una rama especifica de git hub
+	Ejm: git clone -b GR_20200720 https://github.com/TDFabrica/ePlanning.git GR_20200720
 git fetch //Obtiene todos los cambios que se hicieron el github, pero no los actualiza. Te sirve para comparar usando un git status
 Fork: Clona una rama de un repositorio publico en tu cuenta de github
 git remote add upstream [RutaClonarGitHubRepositorioDelQueSeRealizoElFork] //Actualiza los cambios del origen a tu fork
