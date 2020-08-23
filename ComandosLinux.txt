@@ -1,0 +1,43 @@
+ls -> ver los archivos de un directorio
+ls -a -> Ver todos los archivos, inclusive ocultos
+Otros comandos ls:
+	ls -t : Ordena por fecha
+	ls -x : Ordena por nombre y despues por extensión
+	ls -X : Ordena por extensión y luego por nombre
+	ls -l : Muestra toda la información de los archivos
+	ls -lh: Muestra tamaño de los archivos
+	ls -R : Muestra el contenido de los subdirectorios en forma recursiva
+	ls -S : Ordena por tamaño de archivo
+	ls [nombrearchivo]* -> Busca los archivos que inician con la palabra especificada. ejmp: ls scrip*
+
+
+.. -> puntero al directorio padre
+. -> puntero al directorio actual
+pwd -> Obtener la ruta al directorio actual
+cd -> cambiar directorio. Ejm:
+	cd home : se mueve al directorio home
+	cd - : Te lleva al ultimo directorio visitado
+mkdir -> Crear directorio. Ejmp
+	mkdir test	
+cp -> Copiar archivo.Ejm.
+	cp test.txt test/
+rm -> Eliminar un archivo. Ejm
+	rm test.txt
+mv -> mover archivo. Ejm
+	mv ../test.txt . : Mueve el archivo test.tx del directorio anterior al directorio actual.
+rmdir -> Eliminar un directorio
+	rmdir test/ : Se deben eliminar previamente los archivos contenidos
+gzip -> comprimir archivo en formato gzip. Ejm
+	gzip script.sql
+gzip -d -> descomprimir gzip. Ejm:
+	gzip -d script.sql.gz
+find -> Busca archivos en la ruta especificada
+	Ejm. find . -type f -mtime +7
+		find . -name TC*
+curl -> request a una url
+	ejm. curl https://google.com
+wget -> Descarga archivos desde urls
+	ejm. wget htpps://www.php.net/distributions/php-7.3.10
+ssh -> conexión a otra computadora
+crontab -> Ver tareas programadas y crear nuevos comandos
+	
