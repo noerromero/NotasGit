@@ -1,0 +1,64 @@
+docker ps //Lista los contenedores ejecutandose
+docker ps -a//Lista todos los contenedores ejecutandose
+docker inspect [IDContenedor] //Lista toda la metadata del contenedor
+docker inspect [NombreContenedor] //Lista toda la metadata del contenedor
+docker inspect -f '{{ [Filtro] }}' [NombreContenedor] //Filtra una variable de la metadata
+	Ejm: docker inspect -f '{{ json .Config.Env }}' 278b7a86ab6e
+docker rename [NombreContenedor] [NuevoNombreContenedor]
+docker run [NombreContenedor] //Correr o iniciar contenedor
+docker logs [NombreContenedor]	//Lista todas las acciones ejecutadas por los procesos del contenedor
+docker rm [NombreContenedor] //Elimina el contenedor
+docker ps -aq //Lista solo los IDs de los contenedores
+docker rm $(docker ps -aq) //Elimina todos los contenedores en base a su ID
+docker run -it ubuntu //Descarga ubuntu y permite su uso en windows. Utilizar comando "exit" para salir de la instancia linux
+docker run ubuntu [Comando] //Inicia la imagen con un comando. El comando determina el ciclo de vida del contenedor.
+	Ejm. docker run ubuntu tail -f /dev/null //Ubuntu va a estar siempre en ejecución. 
+docker exec -it [NombreContenedor] bash //Permite utilizar el contenedor con el bash de ubuntu.
+linux -> ps -fea //Lista los procesos ejecutados sobre el contenedor.
+/*******Descargar servidor web nginx para usarlo****//
+docker run -d --name server nginx //Descarga e inicializa servidor web
+docker rm -f server //Detener servidor web
+docker run -d --name server -p 8080:80 nginx //Enlazar el puerto de la maquina con el puerto del contenedor
+/*******************************/
+docker volume ls //Listar todos los volumenes de los contenedores
+docker volume prune //Elimina todos los volumenes que no están en uso por los contenedores
+docker volume create [nombreVolumen] //Crea un volumen. Lo que se escribe en el volumen no se pierde.
+	Ejm. docker volume create dbadta
+docker run -d --name db --mount src=[NombreVolumen],dst=[DestinoEspecificoDelVolumen] mongo //Crea una db mongo en el volumen dbdata.
+	Ejem.docker run -d --name db --mount src=dbdata,dst=/data/db mongo 
+docker pull [NombreContenedor] //Obtiene la imagen del contenedor. La imagen es la plantilla del contenedor.
+docker image ls //Lista las imagenes usadas en la pc
+docker pull [NombreContenedor]:[Version] //Obtiene la imagen del contenedor en una versión especifica.
+	Ejm. docker pull ubuntu:1804
+/*******Crear imagenes***********/
+>touch Dockerfile  //Crea el archivo Dockerfile
+>vim Dockerfile //Edita el archivo Dockerfile o Crear mediante explorador de windows
+/***************************************************/
+Inicia edición en vim
+Recopilando y resumiendo los aportes de los comentarios. Primero pulsamos Esc para situarnos en el buffer inferior en modo normal, y
+:q  sale del archivo, si no tenemos cambios sin guardar sale sin más.
+:q!  sale del archivo descartando los cambios no guardados.
+:w  guarda los cambios del archivo, pero no sale de Vim para seguir editando el archivo.
+:wq  guarda los cambios y sale de Vim.
+:x  igual que el anterior.
+/***************************************************/
+docker build -t [NombreImagen]:[Etiqueta] [RutaContexto] // Construye la imagen. La RutaContexto debe ser el directorio donde se encuentra el DockerFile
+	ejem. docker build -t ubuntu:prueba ./ubuntuPrueba
+Ahora ya se puede incializar la nueva imagen.
+docker tag [NombreImagen]:[EtiquetaImagen] [IDUsuarioDockerHub]/[NombreImagen]:[EtiquetaImagen]  //Retagear una imagen con otro tag (Asociado al usuario dockerhub)
+	Ejm. docker tag ubuntu:prueba noerromero/ubuntu:prueba
+docker push noerromero/ubuntu:prueba //Pushear en DockerHub la imagen.
+docker login noerromero //Loguearse desde PC, luego pide contraseña.
+docker history [NombreImagen]:[Tag] //Visualiza todas las capas de la imagen
+	ejem. docker history ubuntu:prueba
+docker run --rm -p 3000:3000 [NombreImagen] //Ejecuta contenedor (--rm) al terminar de correr el contenedor, se borra.
+docker network ls  //Lista las redes disponibles de los contenedores
+
+
+
+
+
+
+
+
+
