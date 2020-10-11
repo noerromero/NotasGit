@@ -40,4 +40,6 @@ wget -> Descarga archivos desde urls
 	ejm. wget htpps://www.php.net/distributions/php-7.3.10
 ssh -> conexión a otra computadora
 crontab -> Ver tareas programadas y crear nuevos comandos
+CRTL + L -> Limpia la terminal
+touch [NombreArchivo] //Crear un archivo
 	
