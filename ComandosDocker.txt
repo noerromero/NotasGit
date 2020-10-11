@@ -52,8 +52,25 @@ docker login noerromero //Loguearse desde PC, luego pide contraseña.
 docker history [NombreImagen]:[Tag] //Visualiza todas las capas de la imagen
 	ejem. docker history ubuntu:prueba
 docker run --rm -p 3000:3000 [NombreImagen] //Ejecuta contenedor (--rm) al terminar de correr el contenedor, se borra.
-docker network ls  //Lista las redes disponibles de los contenedores
-
+docker network ls  //Lista las redes disponibles para los contenedores
+docker network create --attachable [NombreRed] //Crea una red. Attachable permite que otros contenedoers en el futuro se conecten a esa red
+	Ejm.docker network create --attachable RedNoew
+docker network connect [NombreRed] [NombreContenedor] //Conecta un contenedor a una determinada Red
+	Ejm. docker network connect RedNoew db
+docker network inspect [NombreRed] //Visuailzar los contenedores conectados a una red
+docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test [NombreImagen] //Correr contenedor configurando variable de entorno
+docker network rm [NombreRed] //Elimina la red
+docker container stop [container_id] //Detiene un contenedor
+docker-compose up //Ejecuta archivo docker-compose.yml
+docker-compose up -d //Ejecuta archivo docker-compose.yml pero no muestra log
+Ctrl + C //Detiene los servicios de docker
+docker-compose ps //Lista los contenedores ejecutados con el docker-compose.yml
+docker-compose logs [NombreContenedor] //Lista los logs de un contenedor especifico del docker-compose.yml
+docker-compose exec [NombreContenedor]	bash //Entrar al servidor del contenedor especificado del docker-compose.yml
+docker-compose down //Elimina los contenedores iniciados con docker-compose
+docker-compose build //Construye las imagenes configuradas en el docker compose
+docker-compose logs -f [NombreImagen] //Muestra logs de la imangen
+docker-compose scale [NombreImagen]=[NumeroContenedores]
 
 
 
