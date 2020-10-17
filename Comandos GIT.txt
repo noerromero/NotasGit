@@ -23,6 +23,10 @@ git show [IdCommit] //Muestra los ultimos cambios del commit especificado
 git log //Lista todos los commits que se hicieron //presionar "q" para salir
 git log --oneline //Lista todos los commits que se hicieorn pero en una sola linea
 git log --oneline --decorate --all --graph //Lista todos los commits de las distintas ramas
+git log -i --grep ["Texto a Buscar"] //Busca en los commits aquellos textos que coincidan con el especificado.
+git log --since=$(date --date="15 day ago"+"%Y-%m-%d") //Busca los commits desde hace 15 días hacia atras
+git blame [NombreFichero.extension] //Busca los cambios y sus commits en un fichero especifico.
+git bisec //Buscar bugs ingresados en los commits en base a busqueda binaria.
 git diff //Muestra las diferencias de los archivos en relaci�n al �ltimo commit
 git diff --staged //Muestra las diferencias de los archivos entre el �ltimo commit y el archivo ubicado en el stage
 git diff [Rama1] [Rama2] //Muestra las diferencias entre las dos ramas 
@@ -65,6 +69,7 @@ git reset [Nombre del archivo] o [*.xml] (*.extension) //Se elimina o retira un 
 	git reset --soft : Deja los cambios en el staginArea
 git commit --amend --no-edit //Agrega cambios al último commit ya ejecutado
 git cherry pick [IDCommit]// Jala los cambios de un commit especifico en un nuevo connmit. Usado para jalarse conmmits de otras ramas
+
 /*************************/
 
 /*****************Crear archivo .gitignore en Windows**********************/
@@ -182,6 +187,13 @@ x // Aceptar cambios cuando estás editando en vim
 /**************************COMANDOS VISUAL STUDIO CODE***************************/
 code //abre vs code
 
+/***************************CONVENCIONES DE EQUIPO****************/
+Eliminar branch al realizar merge
+Habilitar Code Review en gitHub
+Usar squash para aplanar commits y dejar el historico mas limpio
+Al comentar el commit, especificar el por que, mas que el como
+Reuniones de diseño
+/*******************************************/
 
 
 
