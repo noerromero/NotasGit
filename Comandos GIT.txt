@@ -197,3 +197,5 @@ Reuniones de diseño
 
 
 
+//URL de conslta
+https://erickcion.wordpress.com/2012/09/19/meld-en-git-como-herramienta-de-fusion-merge-y-comparacion-diff/
