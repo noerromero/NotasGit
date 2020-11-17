@@ -197,5 +197,8 @@ Reuniones de diseño
 
 
 
-//URL de conslta
+//Configurar Meld como editor para diferencias y merge
 https://erickcion.wordpress.com/2012/09/19/meld-en-git-como-herramienta-de-fusion-merge-y-comparacion-diff/
+Despues de configurar el diff y merge, complementar con el siguiente comando:
+git config --global mergetool.meld.path "/c/Program Files (x86)/meld/meld.exe"
+
